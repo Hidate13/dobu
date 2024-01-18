@@ -1,0 +1,125 @@
+  
+
+  .cover{
+    padding: 6.5rem 30% 1.4rem;
+  }
+  .form-register{
+    border: none;
+    width: 35rem;
+  }
+
+  /* Add padding to containers */
+  .form-register .container{
+    background-color: #132850;
+    position: relative;
+  }
+  .form-register .container .container-box {
+    border: solid;
+    padding: 1% 1%;
+    border-color: #faf7f6;
+    color: aliceblue;
+    width: 35rem;
+    align-items: center;
+  }
+
+  .form-register .container .container-box div select{
+    width: 30rem;
+  }
+  .form-register .container .container-box{
+    padding-left: 2rem;
+  }
+
+
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 30rem;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #f34f26;
+    color: white;
+    padding: 16px 20px;
+    margin: 0.5rem 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    opacity: 0.9;
+    border-radius: 100px;
+    position:relative;
+    left: 80%;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+  /* class option menu */
+  .class-select {
+    position: relative;
+    width: 100%;
+    padding-bottom: 1.6rem
+  }
+
+  .class-select select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 16px;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+  /* Member options menu */
+  .custom-select {
+    position: relative;
+    width: 100%;
+    padding-bottom: 1.6rem
+  }
+
+  .custom-select select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 16px;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+
+
+  
+ /* Training Courses  menu */
+ .courses-select {
+  position: relative;
+  width: 100%;
+  padding-bottom: 1.6rem
+}
+
+.courses-select select {
+  width: 100%;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}

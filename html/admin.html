@@ -1,0 +1,412 @@
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBu | Martial Arts</title>
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- feather icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+  
+  <!---my style-->
+  <link rel="stylesheet" href="../css/style_dobu.css">
+  <link rel="stylesheet" href="../css/schedule_table.css">
+</head>
+<body>
+  <!-- navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo"><span><sup>DoBu</sup></span>Martial<sub><span>Arts</span>.</sub></a></a>
+  
+    <div class="navbar-nav">
+      <a href="../#home">Home</a>
+      <a href="../#aboutUs">About Us</a>
+      <a href="../html/program.html">Program</a>
+      <a href="../html/instructor.html">Instructor</a>
+      <a href="../html/contactUs.html">Contact</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="ham-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+        <!-- navbar end -->
+
+
+  <section id="facilities" class="facilities" style="height: auto; padding-left:1.5%; ">
+    <div class="row" >
+        <h2><span>Administration </span>Control</h2>
+        <div id="adminTable" class="schedule-outer-table" style="width: 100%; align-items: center; margin-bottom: 2rem; ">
+            <table class="schedule-table" style="width: 100%; margin-top: 1.5rem;">
+              
+              <tbody > 
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Date</th>
+                  <th>Class</th>
+                  <th>Member Option</th>
+                  <th>Courses Option</th>
+                  <th>button</th> 
+                </tr>
+                </tbody>
+                <tbody id="tblbody"></tbody>
+            </table>
+        </div>
+    </div>
+ </section>
+
+
+ <!-- footer start -->
+ <footer style="width : 135rem;">
+  <div class="sitemap" style="margin-bottom: 2rem;">
+    <div clas="sitmap-title">
+      <p>Usefull link</p>
+    </div>
+    <br>
+    <div class="sitemap-menu" style="display: inline-flex; width: 50%rem;" >
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>Martial Arts</span></p>
+          <div><a href="../html/muaythai.html" class="sitemaplink">Muay Thai</a></div>
+          <div><a href="../html/jiujitsu.html" class="sitemaplink">Jiu-jitsu</a></div>
+          <div><a href="../html/kickboxing.html" class="sitemaplink">Kick Boxing</a></div>
+      </div>
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>Class</span></p>
+          <div><a href="../html/schedule.html" class="sitemaplink">class Schedule</a></div>
+          <div><a href="../html/member-option.html" class="sitemaplink">Membership</a></div>
+          <div><a href="" class="sitemaplink"></a></div>
+      </div>
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>information</span></p>
+          <div><a href="../#aboutUs" class="sitemaplink">About Us</a></div>
+          <div><a href="../html/about-facilities.html" class="sitemaplink">Facilities</a></div>
+          <div><a href="" class="sitemaplink"></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="socials">
+    <a href="https://twitter.com/?lang=id">
+      <i data-feather="twitter"></i>
+    </a>
+    <a href="https://instagram.com/">
+      <i data-feather="instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/">
+      <i data-feather="facebook"></i>
+    </a>
+  </div>
+  <div class="links">
+    <a href="../#home">Home</a>
+    <a href="../#aboutUs">About Us</a>
+    <a href="../html/program.html">Program</a>
+    <a href="../html/instructor.html">Instructor</a>
+    <a href="../html/contactUs.html">Contact</a>
+  </div>
+  <div class="credit">
+    <p>Created by <a href=""> Wahyu Hidayat</a>. | &copy; 2023.</p>
+  </div> 
+  <div class="credit">
+    <a href="../html/privacypolicy.html"><p>Privacy Policy</p></a>
+  </div>
+</footer>
+ <!-- footer end -->
+ 
+ 
+ 
+ <!-- feather icons -->
+ <script>
+   feather.replace();
+ </script>
+    <!-- My js -->
+    <script src="../js/script.js"></script>
+    <script src="../js/admin.js"></script>
+
+    <!-- jquery -->
+    <script src="../js/jquery.js"></script>
+ 
+ <!-- js for member options -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+  bindUserData();
+  function addUserDataToLocalStorage(formData) {
+
+      //already has data in localstorage then update it other create new one
+      var users = JSON.parse(localStorage.getItem('userData'));
+      if (users != null) {
+          users.push(formData);
+         
+          localStorage.setItem('userData', JSON.stringify(users));
+      }
+      else {
+          var userData = new Array();
+          userData.push(formData);
+          localStorage.setItem('userData', JSON.stringify(userData));
+
+      }
+  }
+
+  function updateDataToLocalStorage(formData) {
+
+      var users = JSON.parse(localStorage.getItem('userData'));
+      if (users != null) {
+          var user = users.filter((x) => x.id == formData.id).pop();
+          if (user != null) {
+              user.name = formData.name;
+              user.email = formData.email;
+              user.password = formData.password;
+              user.date = formData.date;
+              user.classOption = formData.classOption;
+              user.memberOption = formData.memberOption;
+              user.coursesOption = formData.coursesOption;
+          }
+          localStorage.setItem('userData', JSON.stringify(users));
+      }
+  }
+
+  function deletedataFromLocalStorage(UserId) {
+
+      var users = JSON.parse(localStorage.getItem('userData'));
+      if (users != null) {
+          users.splice(users.findIndex(a => a.id === UserId), 1)
+          localStorage.setItem('userData', JSON.stringify(users));
+      }
+  }
+
+
+  function bindUserData() {
+      
+      var users = JSON.parse(localStorage.getItem('userData'));
+      if (users != null) {
+          document.getElementById('tblbody').innerHTML = "";
+          users.forEach(function (item, index) {
+              debugger;
+              var btnEditId = "btnedit" + item.id;
+              var btnDeleteId = "btndelete" + item.id;
+              var tableRow = "<tr Id='" + item.id + "'   data-CustomerID='" + item.id + "'   data-name='" + item.name + "' data-email='" + item.email + "' data-date='" + item.date + "' data-password='" + item.password + "' data-classOption='" + item.classOption + "' data-memberOption='" + item.memberOption + "' data-coursesOption='" + item.coursesOption + "'>"
+                  + "<td class='td-data'>" + item.id + "</td>"
+                  + "<td class='td-data'>" + item.name + "</td>"
+                  + "<td class='td-data'>" + item.email + "</td>"
+                  + "<td class='td-data'>" + item.password + "</td>"
+                  + "<td class='td-data'>" + item.date + "</td>"
+                  + "<td class='td-data'>" + item.classOption+ "</td>"
+                  + "<td class='td-data'>" + item.memberOption + "</td>"
+                  + "<td class='td-data'>" + item.coursesOption + "</td>"
+                  + "<td class='td-data'>" +
+                  "<button id='" + btnEditId + "' class='btn btn-info btn-xs btn-editcustomer' onclick='showEditRow(" + item.id + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button><br>" +
+                  "<button id='" + btnDeleteId + "' class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteRow(" + item.id + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+                  + "</td>"
+                  + "</tr>";
+              document.getElementById('tblbody').innerHTML += tableRow;
+          })
+      }
+      var AddRow = "<tr>"
+          + "<td class='td-data'></td>"
+          + "<td class='td-data'><input type='text' id='txtname' placeholder='name..' required></td>"
+          + "<td class='td-data'><input type='text' id='txtemail' placeholder='email..' required></td>"
+          + "<td class='td-data'><input type='password' id='password' placeholder='password..' required></td>"
+          + "<td class='td-data'><input type='date' id='date' placeholder='Date..' required></td>"
+          + "<td class='td-data'><select id='class-option'><option value='choose'>choose</option><option value='jiu-jitsu'>Jiujitsu</option><option value='muaythai'>Muay Thai</option><option value='karate'>Karate</option><option value='judo'>Judo</option><option value='Private'>Private</option></select></td>"
+          + "<td class='td-data'><select id='member-option'><option value='choose'>choose</option><option value='Basic'>Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value='Intermediate'>Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value='Advanced'>Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value='Elite'>Elite (Unlimited classes) - £60.00</option><option value='Private'>Private martial arts tuition- per hour - £15.00</option><option value='Junior'>Junior membership - can attend all-kids martial arts - £25.00</option></select></td>"
+          + "<td class='td-data'><select style='width:9rem;' id='courses-option'><option value='choose'>choose</option><option value='self-deffence'>Six-week beginners self-defence course (2 x 1 -hour session week)</option><option value='fitness-room'>Use Of fitness room (per visit)</option><option value='fitness-training'>Personal fitness training (per hour)</option></select></td>"
+          + "<td class='td-data'>" + "<button id= 'btnaddCustomer' onclick='addUser()' class='btn btn-success'> <i class='fa fa-plus-circle' aria-hidden='true'></i>Add</button>" + "</td>"
+          + "</tr>";
+      document.getElementById('tblbody').innerHTML += AddRow;
+  }
+
+  function GetUserID() {
+      const ID = Date.now();
+      return ID;
+  }
+
+  function addUser() {
+      var userId = GetUserID();
+      var txtname = document.getElementById("txtname").value;
+      if (!txtname) {
+          alert('Please enter name!')
+          return false;
+      }
+      var email = document.getElementById("txtemail").value;
+      if (!email) {
+          alert('Please enter email!')
+          return false;
+      }
+      var emailfilter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!emailfilter.test(email)) {
+          alert('Please enter a valid email address!');
+          return false;
+      }
+
+      var password = document.getElementById("password").value;
+      var date = document.getElementById("date").value;
+      var classOption= document.getElementById("class-option").value;
+      var memberOption= document.getElementById("member-option").value;
+      var coursesOption= document.getElementById("courses-option").value;
+      var formData = {
+          "id": userId,
+          "name": txtname,
+          "email": email,
+          "password": password,
+          "date": date,
+          "classOption": classOption,
+          "memberOption": memberOption,
+          "coursesOption":coursesOption
+      };
+      addUserDataToLocalStorage(formData);
+      document.getElementById('txtname').value = "";
+      document.getElementById('txtemail').value = "";
+      bindUserData();
+  };
+
+  function showEditRow(UserID) {
+      var userRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+      var trdata = userRow.querySelectorAll(".td-data");
+      /*returns array of all elements with
+      "row-data" class within the row with given id*/
+      var userID = trdata[0].innerHTML;
+      var userName = trdata[1].innerHTML;
+      var userEmail = trdata[2].innerHTML;
+      var userPassword = trdata[3].innerHTML;
+      var userDate = trdata[4].innerHTML;
+      var userClassOption = trdata[5].innerHTML;
+      var userMemberOption = trdata[6].innerHTML;
+      var userCoursesOption = trdata[7].innerHTML;
+
+      trdata[0].innerHTML = '<input name="txtuserid"  disabled id="txtuserid" value="' + userID + '"/>';
+      trdata[1].innerHTML = '<input name="txtname" id="txtname" value="' + userName + '"/>';
+      trdata[2].innerHTML = '<input name="txtemail" id="txtemail" value="' + userEmail + '"/>';
+      trdata[3].innerHTML = '<input name="password" id="password" value="' + userPassword + '"/>';
+      trdata[4].innerHTML = '<input type="date" name="date" id="date" value="' + userDate + '"/>';
+      if (userClassOption == 'choose') {
+          trdata[5].innerHTML = '<select id="class-option"><option value="choose">none</option><option value="jiu-jitsu">Jiu-jitsu</option><option value="muaythai">Muay Thai</option><option value="Karate">Karate</option><option value="judo">Judo</option></select>';
+      }
+      else if(userClassOption == 'jiu-jitsu') {
+          trdata[5].innerHTML = '<select id="class-option"><option value="jiu-jitsu">Jiu-jitsu</option><option value="choose">none</option><option value="muaythai">Muay Thai</option><option value="Karate">Karate</option><option value="judo">Judo</option></select>';
+      }
+      else if(userClassOption == 'karate') {
+          trdata[5].innerHTML = '<select id="class-option"><option value="karate">Karate</option><option value="jiu-jitsu">Jiu-jitsu</option><option value="muaythai">Muay Thai</option><option value="choose">none</option><option value="judo">Judo</option></select>';
+      }
+      else if(userClassOption == 'muaythai') {
+          trdata[5].innerHTML = '<select id="class-option"><option value="muaythai">Muay Thai</option><option value="jiu-jitsu">Jiu-jitsu</option><option value="choose">none</option><option value="Karate">Karate</option><option value="judo">Judo</option></select>';
+      }
+      else {
+          trdata[5].innerHTML = '<select id="class-option"><option value="judo">Judo</option><option value="jiu-jitsu">Jiu-jitsu</option><option value="muaythai">Muay Thai</option><option value="Karate">Karate</option><option value="choose">none</option></select>';
+      }
+
+      if (userMemberOption == 'choose') {
+        trdata[6].innerHTML = '<select id="member-option"><option value="choose">none</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="Private">Private martial arts tuition- per hour - £15.00</option><option value="Junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else if(userMemberOption == 'Basic')
+      {
+        trdata[6].innerHTML = '<select id="member-option"><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="choose">none</option><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="Private">Private martial arts tuition- per hour - £15.00</option><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else if(userMemberOption == 'Intermediate')
+      {
+        trdata[6].innerHTML = '<select id="member-option"><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="choose">none</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="Private">Private martial arts tuition- per hour - £15.00</option><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else if(userMemberOption == 'Advance')
+      {
+        trdata[6].innerHTML = '<select id="member-option"><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="choose">none</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="Private">Private martial arts tuition- per hour - £15.00</option><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else if(userMemberOption == 'Elite')
+      {
+        trdata[6].innerHTML = '<select id="member-option"><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="choose">none</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Private">Private martial arts tuition- per hour - £15.00</option><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else if(userMemberOption == 'Private')
+      {
+        trdata[6].innerHTML = '<select id="member-option"><option value="Private">Private</option><option value="choose">none</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option></select>';
+      }
+      else {
+        trdata[6].innerHTML = '<select id="member-option"><option value="junior">Junior membership - can attend all-kids martial arts - £25.00</option><option value="Private ">Private</option><option value="intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option><option value="Advance">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option><option value="Elite">Elite (Unlimited classes) - £60.00</option><option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option><option value="choose">none</option></select>';
+      }
+
+      if (userCoursesOption == 'choose') {
+          trdata[7].innerHTML = '<select id="courses-option"><option value="choose">none</option><option value="self-deffence">Self Deffence</option><option value="fitness-room">Use Of fitness room</option><option value="fitness-training">Personal fitness training</option></select>';
+      }
+      else if(userCoursesOption == 'self-deffence') {
+          trdata[7].innerHTML = '<select id="courses-option"><option value="self-deffence">Self Deffence</option><option value="choose">none</option><option value="fitness-room">Use Of fitness room</option><option value="fitness-training">Personal fitness training</option></select>';
+      }
+      else if(userCoursesOption == 'fitness-room') {
+          trdata[7].innerHTML = '<select id="courses-option"><option value="fitness-room">Use Of fitness room</option><option value="self-deffence">Self Deffence</option><option value="choose">none</option><option value="fitness-training">Personal fitness training</option></select>';
+      }
+      else {
+          trdata[7].innerHTML = '<select id="courses-option"><option value="fitness-training">Personal fitness training</option><option value="fitness-room">Use Of fitness room</option><option value="self-deffence">Self Deffence</option><option value="choose">none</option></select>';
+      }
+
+      trdata[8].innerHTML =
+          "<button class='btn btn-primary btn-xs btn-updateCustomer' onclick='updateUser(" + userID + ")'>" +
+          "<i class='fa fa-pencil' aria-hidden='true'></i>Update</button>"
+          + "<button class='btn btn-warning btn-xs btn-cancelupdate' onclick='cancel(" + userID + ")'><i class='fa fa-times' aria-hidden='true'></i>Cancel</button>"
+          + "<button class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteUser(" + userID + ")'>"
+          + "<i class='fa fa-trash' aria-hidden='true'></i>Delete</button>"
+  }
+  function cancel(UserID) {
+      // debugger;
+      var btneditId = "btnedit" + UserID;
+      var btndeleteId = "btndelete" + UserID;
+
+      var CustomerRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+      var data = CustomerRow.querySelectorAll(".td-data");
+
+      var name = CustomerRow.getAttribute("data-name");
+      var email = CustomerRow.getAttribute("data-email");
+      var password = CustomerRow.getAttribute("data-password");
+      var date = CustomerRow.getAttribute("data-date");
+      var classOption = CustomerRow.getAttribute("data-classOption");
+      var memberOption = CustomerRow.getAttribute("data-memberOption");
+      var coursesOption = CustomerRow.getAttribute("data-coursesOption");
+
+      data[0].innerHTML = UserID;
+      data[1].innerHTML = name;
+      data[2].innerHTML = email;
+      data[3].innerHTML = password;
+      data[4].innerHTML = date;
+      data[5].innerHTML = classOption;
+      data[6].innerHTML = memberOption;
+      data[7].innerHTML = coursesOption;
+      var actionbtn = "<button id='" + btneditId + "' class='btn btn-info btn-xs btn-editcustomer' onclick='showEditRow(" + UserID + ")'><i class='fa fa-pencil' aria-hidden='true'></i>Edit</button>" +
+          "<button id='" + btndeleteId + "' class='btn btn-danger btn-xs btn-deleteCustomer' onclick='deleteRow(" + UserID + ")'><i class='fa fa-trash' aria-hidden='true'>Delete</button>"
+      data[8].innerHTML = actionbtn;
+  }
+  function updateUser(UserID) {
+      var userRow = document.getElementById(UserID); //this gives tr of  whose button was clicked
+      var data = userRow.querySelectorAll(".td-data");
+      var name = data[1].querySelector("#txtname").value;
+      var email = data[2].querySelector("#txtemail").value;
+      var password = data[3].querySelector("#password").value;
+      var date = data[4].querySelector("#date").value;
+      var classOption = data[5].querySelector("#class-option").value;
+      var memberOption = data[6].querySelector("#member-option").value;
+      var coursesOption = data[7].querySelector("#courses-option").value;
+      var formData = {
+          "id": UserID,
+          "name": name,
+          "email": email,
+          "password": password,
+          "date": date,
+          "classOption": classOption,
+          "memberOption": memberOption,
+          "coursesOption":coursesOption
+      };
+      updateDataToLocalStorage(formData);
+      bindUserData();
+  }
+  function deleteRow(UserID) {
+      deletedataFromLocalStorage(UserID);
+      bindUserData();
+  }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
+
+  

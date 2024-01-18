@@ -1,0 +1,181 @@
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBu | Martial Arts</title>
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+  <!-- feather icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+  
+  <!---my style-->
+  <link rel="stylesheet" href="../css/style_dobu.css">
+  <link rel="stylesheet" href="../css/registration_style.css">
+</head>
+<body>
+  <!-- navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo"><span><sup>DoBu</sup></span>Martial<sub><span>Arts</span>.</sub></a></a>
+  
+    <div class="navbar-nav">
+      <a href="../#home">Home</a>
+      <a href="../#aboutUs">About Us</a>
+      <a href="../html/program.html">Program</a>
+      <a href="../html/instructor.html">Instructor</a>
+      <a href="../html/contactUs.html">Contact</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="ham-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+        <!-- navbar end -->
+<div class="cover">
+  <form class="form-register"   action="/html/thankyou.html">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <div class="container-box">
+          <div>
+            <label for="name"><b>Name</b></label><br>
+            <input type="text" placeholder="Enter Name" name="name" id="name" required>
+          </div>
+          <div>
+            <label for="email"><b>Email</b></label><br>
+            <input type="text" placeholder="Enter email" name="email" id="email" required>
+          </div>  
+          <div>
+            <label for="psw-repeat"><b>Password</b></label><br>
+            <input type="password" placeholder="Password" name="pwd" id="pwd" required>
+          </div>
+          <div class="date-picker-cover">
+            <label for="date-picker-cover"><b>Date of Birth</b></label><br>
+            <input type="text" placeholder="Date" name="date" id="datepicker" required class="datepicker">
+          </div>
+          <div class="class-select">
+            <label for="class-option"><b>class Options</b></label><br>
+            <select id="class-option">
+              <option value="jiu-jitsu">jiu-jitsu</option>
+              <option value="muaythai">Muay Thai </option>
+              <option value="karate">Karate </option>
+              <option value="Judo">Judo </option>
+            </select>
+          </div>
+          <div class="custom-select">
+            <label for="member-option"><b>Member Options</b></label><br>
+            <select id="member-option">
+              <option value="choose">choose</option>
+              <option value="Basic">Basic (l martial art — 2 sessions per week) - monthly - £25.00</option>
+              <option value="Intermediate">Intermediate (l martial art - 3 sessions per week) - monthl fee - £35.00</option>
+              <option value="Advanced">Advanced (any 2 martial arts - 5 sessions per week) - month fee -£45.00</option>
+              <option value="Elite">Elite (Unlimited classes) - £60.00</option>
+              <option value="Private">Private martial arts tuition- per hour - £15.00</option>
+              <option value="Junior">Junior membership - can attend all-kids martial arts - £25.00</option>
+            </select>
+          </div>
+          <div class="courses-select">
+            <label for="courses-option"><b>Training and Courses</b></label><br>
+            <select id="courses-option">
+              <option value="choose">choose</option>
+              <option value="self-deffence">Six-week beginners self-defence course (2 x 1 -hour session week) - £180.00</option>
+              <option value="fitness-room">Use Of fitness room (per visit) - £6.00</option>
+              <option value="fitness-training">Personal fitness training (per hour) - £35.00</option>
+            </select>
+          </div>
+      </div>
+    </div>
+          <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+  </form>
+  
+</div>
+
+ <!-- footer start -->
+ <footer>
+  <div class="sitemap" style="margin-bottom: 2rem;">
+    <div clas="sitmap-title">
+      <p>Usefull link</p>
+    </div>
+    <br>
+    <div class="sitemap-menu" style="display: inline-flex; width: 50%rem;" >
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>Martial Arts</span></p>
+          <div><a href="../html/muaythai.html" class="sitemaplink">Muay Thai</a></div>
+          <div><a href="../html/jiujitsu.html" class="sitemaplink">Jiu-jitsu</a></div>
+          <div><a href="../html/kickboxing.html" class="sitemaplink">Kick Boxing</a></div>
+      </div>
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>Class</span></p>
+          <div><a href="../html/schedule.html" class="sitemaplink">class Schedule</a></div>
+          <div><a href="../html/member-option.html" class="sitemaplink">Membership</a></div>
+          <div><a href="" class="sitemaplink"></a></div>
+      </div>
+      <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+        <p><span>information</span></p>
+          <div><a href="../#aboutUs" class="sitemaplink">About Us</a></div>
+          <div><a href="../html/about-facilities.html" class="sitemaplink">Facilities</a></div>
+          <div><a href="" class="sitemaplink"></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="socials">
+    <a href="https://twitter.com/?lang=id">
+      <i data-feather="twitter"></i>
+    </a>
+    <a href="https://instagram.com/">
+      <i data-feather="instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/">
+      <i data-feather="facebook"></i>
+    </a>
+  </div>
+  <div class="links">
+    <a href="../#home">Home</a>
+    <a href="../#aboutUs">About Us</a>
+    <a href="../html/program.html">Program</a>
+    <a href="../html/instructor.html">Instructor</a>
+    <a href="../html/contactUs.html">Contact</a>
+  </div>
+  <div class="credit">
+    <p>Created by <a href=""> Wahyu Hidayat</a>. | &copy; 2023.</p>
+  </div> 
+  <div class="credit">
+    <a href="html/privacypolicy.html"><p>Privacy Policy</p></a>
+  </div>
+</footer>
+ <!-- footer end -->
+ 
+ 
+ 
+ <!-- feather icons -->
+ <script>
+   feather.replace();
+ </script>
+ 
+ <!-- jquery for member options -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+
+<script src="../js/script.js"></script>
+<script src="../js/admin.js"></script>
+<script>
+  $(document).ready(function() {
+    $('.datepicker').datepicker({
+      showOtherMonths:true,
+      selectOtherMonths: true,
+      showButtonPanel:true,
+      changeMonth:true,
+      changeYear:true
+    });
+  });
+</script>
+
+</body>
+</html>

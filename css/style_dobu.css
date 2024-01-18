@@ -47,6 +47,13 @@
 .navbar .navbar-logo span {
   color: var(--primary);
 }
+
+.navbar-nav{
+  width: 90%;
+  display: flex;
+  padding-left: 30%;
+}
+
 .navbar .navbar-nav a {
   color: #ffffff;
   display:inline-block;
@@ -74,6 +81,22 @@
 .navbar .navbar-extra a:hover {
   color: var(--primary);
 }
+.navbar .navbar-login a, .btn-back-to-home  a{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-radius: 15rem;
+  position: relative;
+  z-index: 99999;
+}
+.navbar .navbar-login:hover, .btn-back-to-home:hover{
+  opacity: 0.8;
+}
+
+
+
 
 #ham-menu {
   display: none;
@@ -84,7 +107,8 @@
   min-height: 110vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/Dobu-Background.jpg");
+  /* background-image: url("../img/Dobu-Background.jpg"); */
+  background-image: linear-gradient(rgba(19, 40, 80, 0.25), rgba(19, 40, 80, 0.25)), url("../img/Background-Dobu.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -111,9 +135,9 @@
   padding: 4% 3% 0 3%;
   width: 60%;
 }
-.hero .content .content-division{
+.hero .content .content-division-login{
   padding: 1.4rem 5%;
-  width: 30%;
+  max-width: 400px;
 }
 
 .hero .content h1 {
@@ -133,6 +157,17 @@
   text-shadow: 1px 1px 3px var(--secondary);
   mix-blend-mode:hard-light;
 }
+.hero .content .reg {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-radius: 4.5rem;
+  position: relative;
+  z-index: 99;
+}
 .hero .content .cta {
   margin-top: 1rem;
   display: inline-block;
@@ -142,15 +177,24 @@
   background-color: var(--primary);
   border-radius: 0.5rem;
   position: relative;
-  z-index: 9999;
+  z-index: 9;
 }
-.hero .content .cta:hover{
+.hero .content .cta:hover,
+.hero .content .reg:hover{
   opacity: 0.8;
 }
 form {border: 1.5px solid #f1f1f1;}
 
 input[type=text], input[type=password] {
   width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#txtname, #txtemail, #password, #date  {
+  width: 11.5rem;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -165,11 +209,12 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  font-size: xx-small;
 }
 .container {
   padding: 1rem;
   position: relative;
-  z-index: 9999;
+  z-index: 9;
 }
 span.psw {
   color: var(--secondary);
@@ -191,7 +236,7 @@ button:hover {
   padding: 10px 18px;
   background-color: var(--primary);
   position: relative;
-  z-index: 9999;
+  z-index: 99;
 }
 img.avatar {
   width: 40%;
@@ -202,23 +247,50 @@ img.avatar {
   margin: 1em 0 1em 0;
 }
 
-/*aboutUs  and program section*/
+/*aboutUs , instructor , facilities and program section */
 .aboutUs,
 .program,
-.contactUs {
+.instructor,
+.contactUs ,
+.facilities{
   padding: 6.5rem 7% 1.4rem;
+  height: 120vh;
 }
+.instructor{
+  margin-bottom: 6.5rem;
+}
+
 .aboutUs h2,
 .program h2,
-.contactUs h2 {
+.instructor h2,
+.contactUs h2,
+.facilities h2 {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3.5rem;
 }
 .aboutUs h2 span,
 .program h2 span,
-.contactUs h2 span {
+.instructor h2 span,
+.contactUs h2 span,
+.facilities h2 span {
   color: var(--primary);
+}
+
+
+.program a:link{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.program a:visited{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.program a:hover{
+  color: var(--primary);
+}
+.program a:active{
+  color: pink;
 }
 .aboutUs .row {
   display: flex;
@@ -227,52 +299,132 @@ img.avatar {
   flex: 1 1 45rem;
 }
 .aboutUs .row .aboutUs-img img {
-  width: 100%;
+  width: 65%;
+  height: fit-content;
 }
 .aboutUs .row .content {
   flex: 1 1 35rem;
-  padding: 0 1rem;
+  padding: 0 0rem;
 }
 .aboutUs .row .content h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 .aboutUs .row .content p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
   font-size: 1.4rem;
   font-weight: 100;
   line-height: 1.6;
+} 
+.aboutUs .row .content .content-youtube {
+  position: relative;
+  width: 100%;
+  height: 45%;
+}
+.aboutUs .row .content .about-text a:link{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.aboutUs .row .content .about-text a:visited{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.aboutUs .row .content .about-text a:hover{
+  color: var(--primary);
+}
+.aboutUs .row .content .about-text a:active{
+  color: pink;
 }
 
-/* program  and contactUs section*/
+.aboutUs .row .content  a:link{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.aboutUs .row .content  a:visited{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.aboutUs .row .content  a:hover{
+  color: var(--primary);
+}
+.aboutUs .row .content  a:active{
+  color: pink;
+}
+
+/* program  instrtuctor, facilities and contactUs section*/
 .program h2,
-.contactUs h2 {
+.instructor h2,
+.contactUs h2,
+.facilities h2 {
   margin-bottom: 2rem;
 }
 .program p,
-.contactUs p {
+.instructor p,
+.contactUs p,
+.facilities p {
   font-size: 1.4rem;
   text-align: center;
-  max-width: 30rem;
+  max-width: 70rem;
   margin: auto;
   font-weight: 100;
   line-height: 1.6;
 }
-.program .row {
+.program .row,
+.instructor .row,
+.facilities .row {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5rem;
+  margin-top: 2rem;
   justify-content: center;
   text-align: center;
 }
-.program-card {
+.program-card,
+.facilities-card {
   text-align: center;
 }
-.program .row .program-card img {
-  border-radius: 55%;
+.instructor-card{
+  width: 32%;
+  padding: 1.5%;
+}
+.instructor-card.active {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.instructor-card.inactive {
+  opacity: 0.7;
+}
+
+.program-card.active {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.program-card.inactive {
+  opacity: 0.7;
+}
+.program .row .program-card img,
+.instructor .row .instructor-card img ,
+.facilities .row .facilities-card img{
+  border-radius: 50%;
   width: 80%;
 }
-.program .row .program-card .program-card-title {
+.program .row .program-card a:link{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.program .row .program-card a:visited{
+  color: var(--bg);
+  text-decoration: underline;
+}
+.program .row .program-card a:hover{
+  color: var(--primary);
+}
+.program .row .program-card a:active{
+  color: pink;
+}
+.program .row .program-card .program-card-title,
+.instructor .row .instructor-card .instructor-card-title {
   margin: 1rem auto 0.5rem;
 }
 
@@ -281,7 +433,7 @@ img.avatar {
   display: flex;
   margin-top: 2rem;
   background-color: #222;
-  flex-wrap: responsive;
+  flex-wrap:inherit;
 }
 .contactUs .row .map {
   flex: 1 1 45rem;
@@ -290,24 +442,33 @@ img.avatar {
 }
 .contactUs .row form {
   flex: 1 1 45rem;
-  padding: 5rem 2rem;
-  text-align: center;
+  padding: 1rem 2rem;
+  text-align: start;
 }
 .contactUs .row form .input-group {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   background-color: var(--bg);
   border: 1px solid #eee;
   padding-left: 2rem;
 }
-.contactUs .row form .input-group input {
+.contactUs .row form .input-group input,
+.contactUs .row form .input-group textarea {
   width: 100%;
-  padding: 2rem;
-  font-size: 1.8rem;
+  padding: 1.1rem;
+  font-size: 1.2rem;
   background: none;
-  color: #fff;
+  color: var(--secondary);
+
 }
+
+.contactUs .row form .lab{
+  font-size: 1.1rem;
+  color: var(--primary);
+  position: relative;
+} 
+
 .contactUs .row form .btn {
   margin-top: 3rem;
   display: inline-block;
@@ -318,11 +479,25 @@ img.avatar {
   cursor: pointer;
 }
 
+/* admin style */
+#adminTable table tbody tr .td-data select{
+  width : 10rem;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+
+/* footer Style */
 footer {
   background-color: var(--primary);
   text-align: center;
   padding: 1rem 0 3rem;
-  margin-top: 3rem;
+  margin-top: 6rem;
+  width: 100%;
 }
 
 footer .socials {
@@ -363,6 +538,11 @@ footer .credit a {
   #ham-menu {
     display: inline-block;
   }
+  .navbar-nav {
+    padding-left: 1rem;
+    display: block;
+  }
+
   .navbar .navbar-nav {
     position: absolute;
     top: 100%;
@@ -403,25 +583,49 @@ footer .credit a {
     width: auto;
     order: 2;
   }
-  .hero .content .content-division{
+  .hero .content .content-division-login{
     padding: 1.4rem 10%;
     width: auto;
     order:1;
   }
 
+  .aboutUs,
+  .program,
+  .instructor,
+  .contactUs {
+    height: auto;
+  }
+
   .aboutUs .row {
     flex-wrap: wrap;
+    margin-bottom: 20rem;
   }
   .aboutUs .row aboutUs-img img {
-    height: 24rem;
+    height: 100%;
     object-fit: cover;
     object-position: center;
+    align-items: center;
+    padding-left: 10rem;
   }
   .aboutUs .row .content p {
     font-size: 1.7rem;
+    width: 100%;
+    height:50%;
+    position: relative;
   }
+  .aboutUs .row .content .content-youtube {
+    width: 90%;
+    height: 85%;
+  }
+
   .program p {
     font-size: 1.4rem;
+  }
+  .instructor p {
+    font-size: 1.4rem;
+  }
+  .instructor-card{
+    width: 85%;
   }
   .contactUs .row {
     flex-wrap: wrap;
@@ -431,5 +635,9 @@ footer .credit a {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+  .aboutUs .row .content .content-youtube {
+    width: 90%;
+    height: 45%;
   }
 }
