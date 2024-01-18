@@ -138,6 +138,8 @@
 .hero .content .content-division-login{
   padding: 1.4rem 5%;
   max-width: 400px;
+  height: 13rem;
+  width: 400px;
 }
 
 .hero .content h1 {
@@ -587,6 +589,8 @@ footer .credit a {
     padding: 1.4rem 10%;
     width: auto;
     order:1;
+    width: auto;
+    height: auto;
   }
 
   .aboutUs,
