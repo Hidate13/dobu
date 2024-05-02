@@ -1,0 +1,269 @@
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBu | Martial Arts</title>
+  
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- feather icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+  
+  <!---my style-->
+  <link rel="stylesheet" href="css/style_dobu.css">
+<!-- 
+  Include jQuery UI library 
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+  
+</head>
+
+
+
+
+
+<body>
+  <!-- navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo"><span><sup>DoBu</sup></span>Martial<sub><span>Arts</span>.</sub></a></a>
+  
+    <div class="navbar-nav">
+      <a href="./index.html">Home</a>
+      <a href="#aboutUs">About Us</a>
+      <a href="./html/program.html" class="menu">Program </a>
+      <!-- <i style ="size: 1px;" data-feather="chevron-down"></i>
+      <div class="dropdown">
+        <a href="/html/program.html" class="child-menu">Class</a>
+        <a href="/html/schedule.html" class="child-menu">Schedule</a>
+        <a href="/html/member-option.html" class="child-menu">Membership</a>
+      </div> -->
+      <a href="./html/instructor.html">Instructor</a>
+      <a href="./html/contactUs.html ">Contact</a>
+    </div>
+
+    <div class="navbar-login">
+      <a href="#home" class="login-btn" style>Login</a>
+    </div>
+    <div class="navbar-extra">
+      <a href="#" id="ham-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <!-- navbar end -->
+  
+  
+  
+  
+  
+  <!-- hero section start -->
+  <section class="hero" id="home">
+    <main class="content">
+      <div class="content-division-left">
+        <h1> <span>DoBu </span><br>Martial <span>Arts</span>.</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, assumenda sequi quis et eos quidem. </p>
+        <a href="#aboutUs" class="cta">Learn More</a>
+      </div>
+      <div class="content-division-login">
+        <form class="form-login" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <img src="img/avatar-login.png" alt="Avatar" class="avatar">
+          </div>
+        
+          <div class="container">
+            <label name="uname" id="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        
+            <label name="psw" id="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+                
+            <button class="login" type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          <div class="container" style="background-color:#f1f1f1">
+            <a href="./html/registration_form.html" class="reg">Register</a>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+      
+    </main>
+  </section>
+  <!-- hero section end -->
+  
+  
+  
+  
+  <!-- aboutUs section start -->
+  <section id="aboutUs" class="aboutUs">
+      <h2><span>About</span> Us</h2>
+      <div class="row">
+          <div class="aboutUs-img">
+            <img src="img/About-dobu.avif" alt="Tentang Kami"></img>
+          </div>
+          <div class="content">
+            <div class="about-text">
+              <h3> Dobu Martial Arts</h3>
+              <p>DoBu Martial Arts is a martial arts gym. The gym offers classes in a number of different martial arts, as well as fitness training and self-defence courses. The gym has a large, matted martial arts area, a fully-equipped gym, a sauna, a steam room and changing and shower facilities.</p>
+              <a href="#aboutUs"><p class= "about-video">show videos</p></a>
+            </div>  
+            <div>
+              <iframe class ="content-youtube"  src="https://www.youtube.com/embed/ByMOHDGAf3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <br>
+            <div style="display: flex;justify-content: space-between;"> 
+              <a href="./html/about-facilities.html"><p class= "about-more">Facilities</p></a>
+              <a href=#aboutUs><p class= "close-video">Close Video</p></a>
+            </div>
+           
+          </div>
+      </div>
+  </section>
+  <!-- aboutUs section end -->
+  
+  
+  
+ 
+  
+
+  
+  
+  
+  <!-- footer start -->
+  <footer>
+    <div class="sitemap" style="margin-bottom: 2rem;">
+      <div clas="sitmap-title">
+        <p>Usefull link</p>
+      </div>
+      <br>
+      <div class="sitemap-menu" style="display: inline-flex; width: 50%rem;" >
+        <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+          <p><span>Martial Arts</span></p>
+            <div><a href="./html/muaythai.html" class="sitemaplink">Muay Thai</a></div>
+            <div><a href="./html/jiujitsu.html" class="sitemaplink">Jiu-jitsu</a></div>
+            <div><a href="./html/kickboxing.html" class="sitemaplink">Kick Boxing</a></div>
+        </div>
+        <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+          <p><span>Class</span></p>
+            <div><a href="./html/schedule.html" class="sitemaplink">class Schedule</a></div>
+            <div><a href="./html/member-option.html" class="sitemaplink">Membership</a></div>
+            <div><a href="" class="sitemaplink"></a></div>
+        </div>
+        <div class="sitmap-list" style="text-align: left; padding:0 5rem;">
+          <p><span>information</span></p>
+            <div><a href="#aboutUs" class="sitemaplink">About Us</a></div>
+            <div><a href="./html/about-facilities.html" class="sitemaplink">Facilities</a></div>
+            <div><a href="" class="sitemaplink"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+      <a href="https://twitter.com/?lang=id">
+        <i data-feather="twitter"></i>
+      </a>
+      <a href="https://instagram.com/">
+        <i data-feather="instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/">
+        <i data-feather="facebook"></i>
+      </a>
+    </div>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#aboutUs">About Us</a>
+      <a href="./html/program.html">Program</a>
+      <a href="./html/instructor.html">Instructor</a>
+      <a href="./html/contactUs.html">Contact</a>
+    </div>
+    <div class="credit">
+      <p>Created by <a href=""> Wahyu Hidayat</a>. | &copy; 2023.</p>
+    </div> 
+    <div class="credit">
+      <a href="./html/privacypolicy.html"><p>Privacy Policy</p></a>
+    </div>
+  </footer>
+  <!-- footer end -->
+  
+  
+  
+  <!-- feather icons -->
+  <script>
+    feather.replace();
+  </script>
+  
+  <!-- My js -->
+  <script src="js/script.js"></script>
+
+  <!-- jquery -->
+  <script src="js/jquery.js"></script>
+  
+  <!-- jquery about us -->
+  <script>
+    $(document).ready(function(){
+      var loginBtn = $('.login-btn') ;
+      var formLogin = $('.form-login');
+      
+      //  hide the form login.
+      formLogin.hide();
+      $('.login-btn').click(function(e){
+        e.preventDefault();
+
+        //slide up the form login 
+        formLogin.slideToggle();
+        window.location.href = '/index.html#home';
+      });
+    });
+  </script>
+<script>
+$(document).ready(function() {
+  var aboutText = $('.about-text');
+  var contentYoutube = $('.content-youtube');
+  var facilites = $('.about-more');
+  var closeVid = $('.close-video');
+
+  // Hide the content initially
+  contentYoutube.hide();
+  closeVid.hide();
+
+  $('.about-video').click(function(e) {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Slide up the about-text and slide down the content-youtube
+    aboutText.slideUp();
+    contentYoutube.slideDown();
+    closeVid.slideDown();
+  });
+
+  $('.close-video').click(function(e) {
+    e.preventDefault(); // Prevent default link behavior
+
+    // Slide up the about-text and slide down the content-youtube
+    aboutText.slideDown();
+    contentYoutube.slideUp();
+    closeVid.slideUp();
+  });
+
+});
+
+// this is for menu dropdown jquery
+$(document).ready(function(){
+      var cm = $('.child-menu');
+      
+      //  hide the slide menu.
+      cm.hide();
+      $('.menu').hover(function(e){
+        e.preventDefault();
+
+        //slide up the child menu 
+        cm.stop().slideToggle();
+      });
+    });
+</script>
+ 
+
+</body>
+</html>
